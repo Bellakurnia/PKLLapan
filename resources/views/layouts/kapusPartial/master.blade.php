@@ -20,7 +20,7 @@
           <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ Auth::user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -38,14 +38,10 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="treeview">
-          <a href="#">
+        <li class="">
+          <a href="{{ route('admin.dashboard')}}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
-          <ul class="treeview-menu">
-            {{--<li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>--}}
-          </ul>
         </li>
         <li class="treeview">
           <a href="#">
@@ -56,13 +52,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Agam</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Biak</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Garut</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Kupang</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Manado</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Pontianak</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Sumedang</a></li>
+            <li><a href="/agam"><i class="fa fa-circle-o"></i> Agam</a></li>
+            <li><a href="/biak"><i class="fa fa-circle-o"></i> Biak</a></li>
+            <li><a href="/garut"><i class="fa fa-circle-o"></i> Garut</a></li>
+            <li><a href="/kupang"><i class="fa fa-circle-o"></i> Kupang</a></li>
+            <li><a href="/manado"><i class="fa fa-circle-o"></i> Manado</a></li>
+            <li><a href="/pasuruan"><i class="fa fa-circle-o"></i> Pasuruan</a></li>
+            <li><a href="/pontianak"><i class="fa fa-circle-o"></i> Pontianak</a></li>
+            <li><a href="/sumedang"><i class="fa fa-circle-o"></i> Sumedang</a></li>
+            <li><a href="/yogyakarta"><i class="fa fa-circle-o"></i> Yogyakarta</a></li>
           </ul>
         </li>
         {{--  hapus dibawah ini  --}}
@@ -88,8 +86,8 @@
       <!-- Default box -->
 
       <!-- /.box -->
-
     </section>
+
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

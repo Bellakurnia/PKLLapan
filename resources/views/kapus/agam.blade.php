@@ -1,4 +1,4 @@
-@extends('layouts.PenelitiPartial.master')
+@extends('layouts.kapusPartial.master')
 
 @section('title')
 Dashboard
@@ -12,10 +12,24 @@ Dashboard
               <div class="inner">
                 <h3>150</h3>
 
-                <p>User Registration</p>
+                <p>Anggota</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+              <div class="inner">
+                <h3>53<sup style="font-size: 20px"></sup></h3>
+
+                <p>Cabang</p>
+              </div>
+              <div class="icon">
+                <i class="ion fa-map-pin"></i>
               </div>
             </div>
           </div>
@@ -26,11 +40,14 @@ Dashboard
               <div class="inner">
                 <h3>53<sup style="font-size: 20px"></sup></h3>
 
-                <p>Sales</p>
+                <p>Alat</p>
               </div>
               <div class="icon">
-                <i class="ion ion-bag"></i>
+                <i class="ion fa-cogs"></i>
+              </div>
+            </div>
           </div>
+
 
 @endsection
 

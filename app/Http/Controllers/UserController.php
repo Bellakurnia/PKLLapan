@@ -20,61 +20,67 @@ class UserController extends Controller
         return view('lihatAnggota', compact('user'));
     }
 
-    public function count1 ()
+    public function count()
     {
-      $count1 = Count1::count1();
-      return View::make('count1')->with('count1', $count1);
-    }
-    
-    public function viewHome()
-    {
-        return view('Peneliti/home');
+      $count = Count::count();
+      return View::make('count')->with('count', $count);
     }
 
-    public function viewAgam()
+    public function view_home()
     {
-        return view('Peneliti/agam');
+        return view('kapus/home');
     }
 
-    public function viewBiak()
+    public function view_profile()
     {
-        return view('Peneliti/biak');
+        return view('kapus/profile');
     }
 
-    public function viewGarut()
+    public function view_agam()
     {
-        return view('Peneliti/garut');
+        return view('kapus/agam');
     }
 
-    public function viewKupang()
+    public function view_biak()
     {
-        return view('Peneliti/kupang');
+        return view('kapus/biak');
     }
 
-    public function viewManado()
+    public function view_garut()
     {
-        return view('Peneliti/manado');
+        return view('kapus/garut');
     }
 
-    public function viewPontianak()
+    public function view_kupang()
     {
-        return view('Peneliti/pontianak');
+        return view('kapus/kupang');
     }
 
-    public function viewSumedang()
+    public function view_manado()
     {
-        return view('Peneliti/sumedang');
+        return view('kapus/manado');
     }
 
-    public function viewPasuruan()
+    public function view_pasuruan()
     {
-        return view('Peneliti/pasuruan');
+        return view('kapus/pasuruan');
     }
 
-    public function viewYogyakarta()
+    public function view_pontianak()
     {
-        return view('Peneliti/yogyakarta');
+        return view('kapus/pontianak');
     }
+
+    public function view_sumedang()
+    {
+        return view('kapus/sumedang');
+    }
+
+    public function view_yogyakarta()
+    {
+        return view('kapus/yogyakarta');
+    }
+
     public function destroy($id)
     {
         $user   = User::find($id);

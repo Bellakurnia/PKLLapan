@@ -23,39 +23,40 @@ error_reporting(0);
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/profile', function () {
+    return view('kapus/profile');
+});
 Route::get('/agam', function () {
-    return view('Peneliti/agam');
+    return view('kapus/agam');
 });
 Route::get('/biak', function () {
-    return view('Peneliti/biak');
+    return view('kapus/biak');
 });
 Route::get('/garut', function () {
-    return view('Peneliti/garut');
+    return view('kapus/garut');
 });
 Route::get('/kupang', function () {
-    return view('Peneliti/kupang');
+    return view('kapus/kupang');
 });
 Route::get('/manado', function () {
-    return view('Peneliti/manado');
+    return view('kapus/manado');
+});
+Route::get('/pasuruan', function () {
+    return view('kapus/pasuruan');
 });
 Route::get('/pontianak', function () {
-    return view('Peneliti/pontianak');
+    return view('kapus/pontianak');
 });
 Route::get('/sumedang', function () {
-    return view('Peneliti/sumedang');
+    return view('kapus/sumedang');
 });
-
-Route::get('/pasuruan', function () {
-    return view('Peneliti/pasuruan');
-});
-
 Route::get('/yogyakarta', function () {
-    return view('Peneliti/yogyakarta');
+    return view('kapus/yogyakarta');
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
-Route::get('/home', 'UserController@viewHome')->name('Peneliti.dashboard');
+// Route::get('/home', 'UserController@view_home')->name('kapus.dashboard');
 //Route::get('/ea', function(){
   //run cmd
   //$process = new Process('python as.py');

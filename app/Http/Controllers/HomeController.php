@@ -36,10 +36,19 @@ class HomeController extends Controller
           $admins         = User::find($id);
           return view('homeAdmin', compact('side'));
         }
-        else {
+        else if(auth()->user()->isAdmin==0) {
+          $id             = Auth::user()->id;
+          $admins         = User::find($id);
+          return view('Peneliti/home', compact('side'));
+        }
+        else if(auth()->user()->isAdmin==2) {
+          $id             = Auth::user()->id;
+          $admins         = User::find($id);
+          return view('kapus/home', compact('side'));
+        }
+        else{
           return view('home', compact('side'));
         }
-
     }
 
     public function admin()

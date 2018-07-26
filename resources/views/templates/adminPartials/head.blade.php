@@ -4,13 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="assets/img/topi.ico" type="image/ico" />
+	  <link rel="icon" href="assets/img/topi.ico" type="image/ico" />
 
-    <title> {{ config('app.name', 'siapLapan') }} </title> 
+    <title> {{ config('app.name', 'siapLapan') }} </title>
 
     @yield('stylesheets')
-
-
 
     <!-- Bootstrap -->
     <link href= "{{ asset('assets/admin/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -53,11 +51,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css"  >
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
-
+    <!-- Sweet Alert -->
+    <link href="{{ asset('assets/sweetalert/sweetalert.css') }}" rel="stylesheet" type="text/css" >
+    <script src="{{ asset('assets/sweetalert/sweetalert.min.js') }}"></script>
+    <!-- //Sweet Alert -->
+    <!-- Chart -->
+    <script src="{{ asset('assets/chart/js/jquery-1.9.1.min.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('assets/chart/js/highcharts.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('assets/chart/js/exporting.js') }}" type="text/javascript"></script>
+    <!-- //Chart -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
-
-
-
-  </head>
+</head>

@@ -6,36 +6,35 @@
         border: none;
         padding: 200;
         background: none;
-
       }
   </style>
 @endsection
 
 @section('content')
   <div class="col-md-12 col-sm-12 col-xs-12">
-      @if (session()->has('notif'))
-        <div class="alert alert-success alert-dismissible fade in" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-          </button>
-          <strong> {{session()->get('notif')}} </strong>
-        </div>
-      @endif
+
+    @if (session()->has('notif'))
+      <div class="alert alert-success alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+        </button>
+        <strong> {{session()->get('notif')}} </strong>
+      </div>
+    @endif
+
     <div class="x_panel">
       {{--  <div class="x_title">  --}}
         <h2>{{$user->name}}</h2>
         <div class="clearfix"></div>
       {{--  </div>  --}}
       <br><br>
-
-    <br><br>
-
+      <br><br>
       <div class="" role="tabpanel" data-example-id="togglable-tabs">
-          <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Deskripsi</a>
-            </li>
-            <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Komentar</a>
-            </li>
-          </ul>
+        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Deskripsi</a>
+          </li>
+          <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Komentar</a>
+          </li>
+        </ul>
           <div id="myTabContent" class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
 
@@ -138,16 +137,7 @@
 
           </div>
         </div>
-
-
-
-
       </div>
     </div>
   </div>
-
-
-
-
-
 @endsection

@@ -23,40 +23,12 @@ error_reporting(0);
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/profile', function () {
-    return view('kapus/profile');
-});
-Route::get('/agam', function () {
-    return view('kapus/agam');
-});
-Route::get('/biak', function () {
-    return view('kapus/biak');
-});
-Route::get('/garut', function () {
-    return view('kapus/garut');
-});
-Route::get('/kupang', function () {
-    return view('kapus/kupang');
-});
-Route::get('/manado', function () {
-    return view('kapus/manado');
-});
-Route::get('/pasuruan', function () {
-    return view('kapus/pasuruan');
-});
-Route::get('/pontianak', function () {
-    return view('kapus/pontianak');
-});
-Route::get('/sumedang', function () {
-    return view('kapus/sumedang');
-});
-Route::get('/yogyakarta', function () {
-    return view('kapus/yogyakarta');
-});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('admin.dashboard');
-// Route::get('/home', 'UserController@view_home')->name('kapus.dashboard');
+
+
 //Route::get('/ea', function(){
   //run cmd
   //$process = new Process('python as.py');
@@ -68,6 +40,11 @@ Route::prefix('admin')->group(function(){
   Route::get('/tambahStaff', 'AdminController@view')->name('tambahStaff.view');
   Route::post('/tambahStaff', 'AdminController@create')->name('tambahStaff.create');
 
-  Route::get('/lihatStaff', 'UserController@readAll')->name('lihatStaff.readAll');
-  Route::delete('/lihatStaff/{id}/delete', 'UserController@destroy')->name('lihatStaff.destroy');
+  Route::get('/lihatStaff', 'AdminController@readAll')->name('lihatStaff.readAll');
+  Route::delete('/lihatStaff/{id}/delete', 'AdminController@destroy')->name('lihatStaff.destroy');
+
+  Route::get('/profil', 'AdminController@profilAdmin')->name('profilAdmin');
+  Route::post('/profil', 'UserController@gantiPassword')->name('ganti.password');
+
+  Route::get('/home/{id_cabang}', 'AdminController@viewCabang')->name('lihat.agam');
 });

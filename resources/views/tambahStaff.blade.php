@@ -1,3 +1,4 @@
+<?php session()->put('flag', 2); ?>
 @extends('templates.admins.master')
 
 @section('stylesheets')

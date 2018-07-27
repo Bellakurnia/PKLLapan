@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login</title>
+	<title>Halaman Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{{ asset('page/login/images/icons/favicon.ico') }}">
+	<!-- <link rel="icon" type="image/png" href="{{ asset('page/login/images/icons/favicon.ico') }}"> -->
+	<link rel="shortcut icon" href="favicon.ico">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('page/login/vendor/bootstrap/css/bootstrap.min.css') }}">
 <!--===============================================================================================-->

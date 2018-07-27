@@ -1,3 +1,4 @@
+<?php session()->put('flag', 1); ?>
 @extends('templates.admins.master')
 
 @section('content')

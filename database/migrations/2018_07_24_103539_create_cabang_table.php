@@ -15,8 +15,8 @@ class CreateCabangTable extends Migration
     {
         Schema::create('cabang', function (Blueprint $table) {
             $table->increments('id_cabang');
-            $table->timestamps();
             $table->string('nama_cabang');
+            $table->timestamps();
         });
     }
 

@@ -4,9 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="icon" href="assets/img/topi.ico" type="image/ico" />
-
-    <title> {{ config('app.name', 'siapLapan') }} </title>
+	  <!-- <link rel="icon" href="assets/img/topi.ico" type="image/ico" /> -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <?php $value = Session::get('flag'); ?>
+    <?php
+    if($value==0) {
+      $value = 'Dashboard';
+    }
+    else if($value==1) {
+      $value = 'Daftar Anggota';
+    }
+    else if($value==2) {
+      $value = 'Tambah Anggota';
+    }
+    ?>
+    <title> <?php echo $value; ?>  </title>
 
     @yield('stylesheets')
 

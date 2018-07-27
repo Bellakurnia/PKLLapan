@@ -5,7 +5,7 @@
       <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard <span class="fa fa-chevron"></span></a>
       </li>
 		<ul class="nav side-menu">
-      <li><a><i class="fa fa-mortar-board"></i> Keanggotaan <span class="fa fa-chevron-down"></span></a>
+      <li><a><i class="fa fa-group"></i> Keanggotaan <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="{{ route('lihatStaff.readAll') }}">Daftar Anggota</a></li>
           <li><a href="{{ route('tambahStaff.create') }}">Tambah Anggota</a></li>

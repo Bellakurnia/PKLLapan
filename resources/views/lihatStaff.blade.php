@@ -32,7 +32,7 @@
               <th style="width: 1%" >Number</th>
               <th> Nama Anggota</th>
               <th>Email</th>
-              <th>Nomor Identitas</th>
+              <th>NIK</th>
               <th>Jabatan Anggota</th>
               <th style="width: 1%">Actions</th>
             </tr>
@@ -54,7 +54,7 @@
                   $jabatan = 'Admin';
                 }
                 else if($read->isAdmin ==2) {
-                  $jabatan = 'Kepala Pusat';
+                  $jabatan = 'Kepala Bidang';
                 }
               ?>
               <td>{{ $jabatan }}</td>

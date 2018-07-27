@@ -143,7 +143,7 @@
                   position: pos,
                   map: map,
                   // animation:google.maps.Animation.BOUNCE,
-                  // icon:'location.png',
+                  icon:'biru2.png',
                 });
               }
               else {
@@ -151,7 +151,7 @@
                     position: pos,
                     map: map,
                     // animation:google.maps.Animation.BOUNCE,
-                    // icon:'merah.png',
+                    icon:'merah2.png',
                 });
               }
 

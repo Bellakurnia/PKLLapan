@@ -17,6 +17,9 @@
     else if($value==2) {
       $value = 'Tambah Anggota';
     }
+    else if($value==3) {
+      $value = 'Ganti Kata Sandi';
+    }
     ?>
     <title> <?php echo $value; ?>  </title>
 

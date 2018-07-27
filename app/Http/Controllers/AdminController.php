@@ -58,8 +58,9 @@ class AdminController extends UserController
 
     public function viewCabang($id)
     {
-        $side   = sidebar::where('id_cabang', '=', $id)->get();
-        return view('Agam');
+        // $side   = sidebar::where('id_cabang', '=', $id)->get();
+        $side = sidebar::orderBy('id_cabang')->get();
+        return view('Agam', compact('side'));
     }
 
     public function readAll()

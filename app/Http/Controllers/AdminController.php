@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Notifications\SendPassword;
 use Session;
 use App\sidebar;
+use App\Cabang;
+use Symfony\Component\Process\Process;
 
 session()->regenerate();
 error_reporting(0);
@@ -51,9 +53,8 @@ class AdminController extends UserController
       session()->put('password', $pswd);
       $info->notify(new SendPassword());
 
-      session()->flash('success', 'Tambah Anggota Berhasil!');
+      session()->flash('success', 'Anggota Berhasil Ditambahkan');
       return redirect()->back();
-      //echo 'aaa';
     }
 
     public function viewCabang($id)
@@ -66,6 +67,38 @@ class AdminController extends UserController
     public function tambahCabang()
     {
       return view('tambahCabang');
+    }
+
+    public function createCabang(Request $request)
+    {
+      $this->validate($request, array(
+              'name'          => 'required|max:100',
+              'ip_server'      => 'required',
+          ));
+
+          $process = new Process('python ../routes/cabang.py');
+          $process->run();
+
+          if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+          }
+
+          $output = $process->getOutput();
+          $myarray = array();
+          $myarray = preg_split('/\r\n/', $output);
+          unset($myarray[2]);
+
+          // dd($myarray);
+
+      $user   = Cabang::create([
+              'nama_cabang'   => $request->input('name'),
+              'ip_server'     => $request->input('ip_server'),
+              'longitude'     => $myarray[1],
+              'latitude'      => $myarray[0],
+          ]);
+
+      session()->flash('success', 'Cabang Berhasil Ditambahkan');
+      return redirect()->back();
     }
 
     public function readAll()

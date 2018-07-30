@@ -1,5 +1,6 @@
 # importing the requests library
 import requests
+import json
  
 # api-endpoint
 URL = "http://maps.googleapis.com/maps/api/geocode/json"
@@ -24,5 +25,11 @@ longitude = data['results'][0]['geometry']['location']['lng']
 formatted_address = data['results'][0]['formatted_address']
  
 # printing the output
-print("Latitude:%s\nLongitude:%s\nFormatted Address:%s"
-      %(latitude, longitude,formatted_address))
+#print("Latitude:%s\nLongitude:%s\nFormatted Address:%s"
+#      %(latitude, longitude,formatted_address))
+
+latitude = float(latitude)
+longitude = float(longitude)
+
+print(json.dumps(latitude))
+print(json.dumps(longitude))

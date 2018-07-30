@@ -38,15 +38,15 @@
       @endif
       {{-- end alert --}}
 
-      <form class="form-horizontal form-label-left" action="#" method="post"  enctype="multipart/form-data">
+      <form class="form-horizontal form-label-left" action="{{ route('tambahCabang.create') }}" method="post"  enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <div class="form-group">
-          <label class="control-label col-md-2">Nama Anggota
+          <label class="control-label col-md-2">Nama Cabang
             <span class="required">*</span>
           </label>
           <div class="col-md-9">
-            <input type="text" class="form-control" required="required" name="name" placeholder="Nama Anggota" class="form-control col-md-9 col-xs-12">
+            <input type="text" class="form-control" required="required" name="nama_cabang" placeholder="Nama Cabang" class="form-control col-md-9 col-xs-12">
           </div>
         </div>
 
@@ -55,7 +55,7 @@
             <span class="required">*</span>
           </label>
           <div class="col-md-9">
-            <input type="number" class="form-control" required="required" name="ip" placeholder="IP Server" class="form-control col-md-9 col-xs-12">
+            <input type="text" class="form-control" required="required" name="ip_server" placeholder="IP Server" class="form-control col-md-9 col-xs-12">
           </div>
         </div>
 

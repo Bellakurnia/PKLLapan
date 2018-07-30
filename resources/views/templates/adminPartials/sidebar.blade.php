@@ -17,7 +17,7 @@
           @foreach ($side as $id)
           <li><a href="{{ route('lihat.agam', $id->id_cabang) }}">{{ $id->nama_cabang }}</a></li>
           @endforeach
-          <li><a href="#">Tambah Cabang</a></li>
+          <li><a href="{{ route('tambahCabang') }}">Tambah Cabang</a></li>
         </ul>
       </li>
     <ul class="nav side-menu">

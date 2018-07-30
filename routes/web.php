@@ -48,10 +48,22 @@ Route::prefix('admin')->group(function(){
 
   Route::get('/home/{id_cabang}', 'AdminController@viewCabang')->name('lihat.agam');
 
-  Route::get('/home/tambahCabang', 'AdminController@tambahCabang')->name('tambah.cabang');
+  Route::get('/tambahCabang', 'AdminController@tambahCabang')->name('tambahCabang');
+  Route::post('/tambahCabang', 'AdminController@createCabang')->name('tambahCabang.create');
 });
 
 Route::get('/pdf', 'PDFController@getPDF');
+
+Route::get('/wow', function(){
+  $process = new Process('python ../routes/cabang.py');
+  $process->run();
+
+  $output = $process->getOutput();
+  $myarray = array();
+  $myarray = preg_split('/\r\n/', $output);
+  unset($myarray[2]);
+  dd($myarray);
+});
 
 Route::get('/ea', function(){
 $mysqli = new mysqli("localhost", "root", "", "siaplapan");
@@ -61,7 +73,7 @@ if($mysqli === false){
     die("ERROR: Could not connect. " . $mysqli->connect_error);
 }
 
-  $process = new Process('python D:/Coba/htdocs/siapLapan/routes/as.py');
+  $process = new Process('python ../routes/data.py');
   $process->run();
 
   if (!$process->isSuccessful()) {

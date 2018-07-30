@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
           'name'      => 'Admin',
           'email'     => 'admin@admin.com',
           'password'  => Hash::make('admins'),
-          'identitas' => 'ID Pegawai',
+          'identitas' => '14045',
           'isAdmin'   => 1,
           'remember_token' => str_random(10),
       ]);

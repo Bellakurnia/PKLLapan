@@ -16,9 +16,9 @@ class CreateCabangTable extends Migration
         Schema::create('cabang', function (Blueprint $table) {
             $table->increments('id_cabang');
             $table->string('nama_cabang');
-            $table->float('ip_server');
-            $table->float('longitude');
-            $table->float('latitude');
+            $table->string('ip_server');
+            $table->string('longitude');
+            $table->string('latitude');
             $table->timestamps();
         });
     }

@@ -47,6 +47,8 @@ Route::prefix('admin')->group(function(){
   Route::post('/profil', 'UserController@gantiPassword')->name('ganti.password');
 
   Route::get('/home/{id_cabang}', 'AdminController@viewCabang')->name('lihat.agam');
+
+  Route::get('/home/tambahCabang', 'AdminController@tambahCabang')->name('tambah.cabang');
 });
 
 Route::get('/pdf', 'PDFController@getPDF');

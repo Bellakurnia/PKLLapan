@@ -63,6 +63,11 @@ class AdminController extends UserController
         return view('Agam', compact('side'));
     }
 
+    public function tambahCabang()
+    {
+      return view('tambahCabang');
+    }
+
     public function readAll()
     {
         $readUser = User::orderBy('id')->get();

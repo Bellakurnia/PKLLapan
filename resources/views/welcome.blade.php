@@ -127,8 +127,16 @@
 
           var mapCanvas = document.getElementById('map-canvas');
           var mapOptions = {
+            scrollwheel: false,
+            navigationControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            draggable: true,
+            minZoom: 5,
+            maxZoom: 7,
             mapTypeId: google.maps.MapTypeId.ROADMAP
           }
+
           var map = new google.maps.Map(mapCanvas, mapOptions)
 
           var infowindow = new google.maps.InfoWindow(), marker, i;

@@ -1,4 +1,3 @@
-<?php session()->put('flag', 3); ?>
 @extends('templates.admins.master')
 
 @section('stylesheets')
@@ -58,7 +57,7 @@
         </div>
 
         <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
-          <label for="new-password" class="control-label col-md-2">Kata Sandi Lama<span class="required">*</span></label>
+          <label for="new-password" class="control-label col-md-2">Kata Sandi Lama</label>
           <div class="col-md-4">
             <input id="current-password" type="password" class="form-control" name="current-password" value="{{ old('current-password') }}" required>
             @if ($errors->has('current-password'))
@@ -70,7 +69,7 @@
         </div>
 
         <div class="form-group{{ $errors->has('new-password') ? ' has-error' : '' }}">
-          <label for="new-password" class="control-label col-md-2">Kata Sandi Baru<span class="required">*</span></label>
+          <label for="new-password" class="control-label col-md-2">Kata Sandi Baru</label>
           <div class="col-md-4">
             <input id="new-password" type="password" class="form-control" name="new-password" required>
             @if ($errors->has('new-password'))
@@ -82,7 +81,7 @@
         </div>
 
         <div class="form-group">
-          <label for="new-password-confirm" class="control-label col-md-2">Konfirmasi Kata Sandi<span class="required">*</span></label>
+          <label for="new-password-confirm" class="control-label col-md-2">Konfirmasi Kata Sandi</label>
           <div class="col-md-4">
             <input id="new-password-confirm" type="password" class="form-control" name="new-password_confirmation" required>
           </div>

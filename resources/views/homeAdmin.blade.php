@@ -1,11 +1,10 @@
-<?php session()->put('flag', 0); ?>
 @extends('templates.admins.master')
 
 @section('content')
   <div class="row top_tiles">
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
       <div class="tile-stats">
-        <div class="icon"><i class="fa fa-group"></i></div>
+        <div class="icon"><i class="fa fa-mortar-board"></i></div>
         <div class="count">{{ DB::table('users')->count() }}</div>
         <h3>Anggota</h3>
       </div>
@@ -20,7 +19,7 @@
     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
       <div class="tile-stats">
         <div class="icon"><i class="fa fa-wrench"></i></div>
-        <div class="count">{{ DB::table('alat')->count() }}</div>
+        <div class="count">179</div>
         <h3>Alat</h3>
       </div>
     </div>
@@ -62,16 +61,8 @@
 
         var mapCanvas = document.getElementById('map-canvas');
         var mapOptions = {
-          scrollwheel: false,
-          navigationControl: false,
-          mapTypeControl: false,
-          scaleControl: false,
-          draggable: true,
-          minZoom: 5,
-          maxZoom: 7,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-
         var map = new google.maps.Map(mapCanvas, mapOptions)
 
         var infowindow = new google.maps.InfoWindow(), marker, i;
@@ -85,8 +76,8 @@
             marker = new google.maps.Marker({
                 position: pos,
                 map: map,
-                animation:google.maps.Animation.BOUNCE,
-                icon:'biru2.png',
+                // animation:google.maps.Animation.BOUNCE,
+                // icon:'location.png',
               });
             }
             else {

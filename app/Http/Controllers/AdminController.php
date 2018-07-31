@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Userinfo;
+use App\File;
+use App\Alat;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\SendPassword;
 use Session;
 use App\sidebar;
-use App\Cabang;
-use Symfony\Component\Process\Process;
+use Chart;
 
 session()->regenerate();
 error_reporting(0);
@@ -53,52 +54,22 @@ class AdminController extends UserController
       session()->put('password', $pswd);
       $info->notify(new SendPassword());
 
-      session()->flash('success', 'Anggota Berhasil Ditambahkan');
+      session()->flash('success', 'Tambah Anggota Berhasil!');
       return redirect()->back();
+      //echo 'aaa';
     }
 
     public function viewCabang($id)
     {
-        // $side   = sidebar::where('id_cabang', '=', $id)->get();
-        $side = sidebar::orderBy('id_cabang')->get();
+        $side   = sidebar::orderBy('id_cabang')->get();
+        $file = File::orderBy('id_file')->get();
+        $alat = Alat::orderBy('id_alat')->get();
+        session()->put('file', $file);
+        session()->put('id', $id);
+        session()->put('alat', $alat);
+        // dd((integer)$id);
         return view('Agam', compact('side'));
-    }
 
-    public function tambahCabang()
-    {
-      return view('tambahCabang');
-    }
-
-    public function createCabang(Request $request)
-    {
-      $this->validate($request, array(
-              'name'          => 'required|max:100',
-              'ip_server'      => 'required',
-          ));
-
-          $process = new Process('python ../routes/cabang.py');
-          $process->run();
-
-          if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process);
-          }
-
-          $output = $process->getOutput();
-          $myarray = array();
-          $myarray = preg_split('/\r\n/', $output);
-          unset($myarray[2]);
-
-          // dd($myarray);
-
-      $user   = Cabang::create([
-              'nama_cabang'   => $request->input('name'),
-              'ip_server'     => $request->input('ip_server'),
-              'longitude'     => $myarray[1],
-              'latitude'      => $myarray[0],
-          ]);
-
-      session()->flash('success', 'Cabang Berhasil Ditambahkan');
-      return redirect()->back();
     }
 
     public function readAll()

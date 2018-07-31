@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="shortcut icon" href="favicon.ico">
+
       <title>siapLapan</title>
 
       <!-- Fonts -->
@@ -127,16 +127,8 @@
 
           var mapCanvas = document.getElementById('map-canvas');
           var mapOptions = {
-            scrollwheel: false,
-            navigationControl: false,
-            mapTypeControl: false,
-            scaleControl: false,
-            draggable: true,
-            minZoom: 5,
-            maxZoom: 7,
             mapTypeId: google.maps.MapTypeId.ROADMAP
           }
-
           var map = new google.maps.Map(mapCanvas, mapOptions)
 
           var infowindow = new google.maps.InfoWindow(), marker, i;
@@ -159,7 +151,7 @@
                     position: pos,
                     map: map,
                     // animation:google.maps.Animation.BOUNCE,
-                    icon:'merah2.png',
+                    // icon:'merah.png',
                 });
               }
 
@@ -177,7 +169,6 @@
       </script>
   </head>
   <body>
-    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/ico"> -->
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
           <div class="top-right links">
@@ -185,7 +176,7 @@
               <a href="{{ url('/home') }}">Home</a>
             @else
               <a href="{{ route('login') }}">Login</a>
-              <!-- <a href="{{ route('register') }}">Register</a> -->
+              <a href="{{ route('register') }}">Register</a>
             @endauth
           </div>
         @endif

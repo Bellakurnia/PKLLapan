@@ -1,4 +1,3 @@
-<?php session()->put('flag', 1); ?>
 @extends('templates.admins.master')
 
 @section('content')
@@ -32,7 +31,7 @@
               <th style="width: 1%" >Number</th>
               <th> Nama Anggota</th>
               <th>Email</th>
-              <th>NIK</th>
+              <th>Nomor Identitas</th>
               <th>Jabatan Anggota</th>
               <th style="width: 1%">Actions</th>
             </tr>
@@ -54,7 +53,7 @@
                   $jabatan = 'Admin';
                 }
                 else if($read->isAdmin ==2) {
-                  $jabatan = 'Kepala Bidang';
+                  $jabatan = 'Kepala Pusat';
                 }
               ?>
               <td>{{ $jabatan }}</td>

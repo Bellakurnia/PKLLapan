@@ -1,4 +1,3 @@
-<?php session()->put('flag', 0); ?>
 @extends('layouts.kapusPartial.master')
 
 @section('title')
@@ -26,7 +25,7 @@ Dashboard
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3>{{DB::table('alat')->count()}}</h3>
+                  <h3>#</h3>
 
                   <p>Alat</p>
                 </div>

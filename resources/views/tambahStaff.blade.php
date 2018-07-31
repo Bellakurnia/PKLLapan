@@ -1,4 +1,3 @@
-<?php session()->put('flag', 2); ?>
 @extends('templates.admins.master')
 
 @section('stylesheets')
@@ -78,7 +77,7 @@
         </div> -->
 
         <div class="form-group">
-          <label class="control-label col-md-2">NIK
+          <label class="control-label col-md-2">Nomor Identitas
             <span class="required">*</span>
           </label>
           <div class="col-md-9">
@@ -92,9 +91,9 @@
           </label>
           <div class="col-md-9">
               <select class="tags form-control program-multi" tabindex="-1"  name="jabatan" required="required">
-                  <option value="1">Admin</option>
-                  <option value="2">Kepala Bidang</option>
                   <option value="0">Peneliti</option>
+                  <option value="1">Admin</option>
+                  <option value="2">Kepala Pusat</option>
                </select>
             </div>
           </div>

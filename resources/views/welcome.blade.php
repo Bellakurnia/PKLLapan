@@ -142,8 +142,8 @@
               marker = new google.maps.Marker({
                   position: pos,
                   map: map,
-                  // animation:google.maps.Animation.BOUNCE,
-                  // icon:'location.png',
+                  animation:google.maps.Animation.BOUNCE,
+                  icon:'biru2.png',
                 });
               }
               else {

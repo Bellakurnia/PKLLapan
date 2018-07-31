@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Cabang;
 use Auth;
 use Storage;
 use App\sidebar;
@@ -32,9 +33,11 @@ class HomeController extends Controller
     {
         $side   = sidebar::orderBy('id_cabang')->get();
         if(auth()->user()->isAdmin==1) {
-          $id             = Auth::user()->id;
-          $admins         = User::find($id);
-          return view('homeAdmin', compact('side'));
+          $id     = Auth::user()->id;
+          $admins = User::find($id);
+          $IP     = Cabang::orderBy('id_cabang')->get();
+          // session()->put('IP', $IP);
+          return view('homeAdmin', compact('side'), compact('IP'));
         }
         else if(auth()->user()->isAdmin==0) {
           $id             = Auth::user()->id;

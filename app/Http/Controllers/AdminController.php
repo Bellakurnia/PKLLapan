@@ -92,4 +92,42 @@ class AdminController extends UserController
       $side   = sidebar::orderBy('id_cabang')->get();
       return view('profil', compact('side'));
     }
+
+    public function tambahCabang()
+    {
+      $side   = sidebar::orderBy('id_cabang')->get();
+      return view('tambahCabang', compact('side'));
+    }
+
+    public function createCabang(Request $request)
+    {
+      $this->validate($request, array(
+              'name'          => 'required|max:100',
+              'ip_server'      => 'required',
+          ));
+
+          $process = new Process('python ../routes/cabang.py');
+          $process->run();
+
+          if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+          }
+
+          $output = $process->getOutput();
+          $myarray = array();
+          $myarray = preg_split('/\r\n/', $output);
+          unset($myarray[2]);
+
+          // dd($myarray);
+
+      $user   = Cabang::create([
+              'nama_cabang'   => $request->input('name'),
+              'ip_server'     => $request->input('ip_server'),
+              'longitude'     => $myarray[1],
+              'latitude'      => $myarray[0],
+          ]);
+
+      session()->flash('success', 'Cabang Berhasil Ditambahkan');
+      return redirect()->back();
+    }
 }

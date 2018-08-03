@@ -84,7 +84,7 @@
               marker = new google.maps.Marker({
                   position: pos,
                   map: map,
-                  icon:'merah2.png',
+                  // icon:'merah2.png',
               });
             }
 

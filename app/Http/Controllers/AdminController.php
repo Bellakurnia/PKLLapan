@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
 use App\Userinfo;
@@ -61,7 +62,7 @@ class AdminController extends UserController
 
     public function viewCabang($id)
     {
-        $side   = sidebar::orderBy('id_cabang')->get();
+        $side = sidebar::orderBy('id_cabang')->get();
         $file = File::orderBy('id_file')->get();
         $alat = Alat::orderBy('id_alat')->get();
         session()->put('file', $file);

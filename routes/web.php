@@ -6,6 +6,7 @@ use App\Userinfo;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use vendor\laravel\framework\src\Illuminate\Contracts\Support\Htmlable;
+use Carbon\Carbon;
 session()->regenerate();
 error_reporting(0);
 
